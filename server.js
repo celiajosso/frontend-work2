@@ -81,6 +81,23 @@ app.post("/api/todos", function (req, res) {
   );
 });
 
+// update a todo (mark as done/undone)
+app.put("/api/todos/:todo_id", function (req, res) {
+  Todo.findOneAndUpdate(
+    { _id: req.params.todo_id },
+    { done: req.body.done },
+    { new: true },
+    function (err, todo) {
+      if (err) res.send(err);
+      // get and return all the todos after update
+      Todo.find(function (err, todos) {
+        if (err) res.send(err);
+        res.json(todos);
+      });
+    }
+  );
+});
+
 // app.put("/api/todos", function (req, res) {});
 app.patch("/api/todos", function (req, res) {});
 
