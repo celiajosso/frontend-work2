@@ -1,4 +1,4 @@
-# Frontend work 1: Angular Todo app
+# Frontend work 2: Angular Todo app
 
 ## Commands
 
