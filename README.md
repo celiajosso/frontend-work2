@@ -7,6 +7,8 @@ npm install
 npm run start
 ```
 
+## Navigation
+
 Go to `localhost:4000`
 
 ## Warning
